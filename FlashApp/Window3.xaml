@@ -1,0 +1,42 @@
+﻿<Window x:Class="FlashApp.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlashApp"
+        mc:Ignorable="d"
+        Title="Window3" Height="450" Width="800" Loaded="Window_Load">
+    <Grid>
+        <TextBlock x:Name="Display" HorizontalAlignment="Left" Margin="31,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="70" Width="246">
+            <TextBlock.RenderTransform>
+                <ScaleTransform ScaleX="3" ScaleY="3" />
+            </TextBlock.RenderTransform>
+            Szöveg
+        </TextBlock>
+        <RadioButton x:Name="egy" Content="RadioButton" HorizontalAlignment="Left" Margin="84,246,0,0" VerticalAlignment="Top" Height="33" Width="103">
+            <RadioButton.RenderTransform>
+                <ScaleTransform ScaleX="1.7" ScaleY="1.7"/>
+            </RadioButton.RenderTransform>
+
+        </RadioButton>
+        <RadioButton x:Name="ket" Content="RadioButton" HorizontalAlignment="Left" Margin="312,247,0,0" VerticalAlignment="Top" Height="33" Width="103">
+            <RadioButton.RenderTransform>
+                <ScaleTransform ScaleX="1.7" ScaleY="1.7"/>
+            </RadioButton.RenderTransform>
+
+        </RadioButton>
+        <RadioButton x:Name="har" Content="RadioButton" HorizontalAlignment="Left" Margin="535,246,0,0" VerticalAlignment="Top" Height="33" Width="103">
+            <RadioButton.RenderTransform>
+                <ScaleTransform ScaleX="1.7" ScaleY="1.7"/>
+            </RadioButton.RenderTransform>
+
+        </RadioButton>
+        <Button Content="Tip" HorizontalAlignment="Center" Margin="0,303,0,0" VerticalAlignment="Top" Height="88" Width="174" Click="Chuck" ClickMode="Press"/>
+        <TextBlock x:Name="Vege" HorizontalAlignment="Left" Margin="49,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="80">
+            <TextBlock.RenderTransform>
+                <ScaleTransform ScaleX="3" ScaleY="3" />
+            </TextBlock.RenderTransform>
+
+        </TextBlock>
+    </Grid>
+</Window>

@@ -42,6 +42,13 @@ namespace FlashApp
             Close();
 
         }
+
+        void Tip(object sender, RoutedEventArgs s) { 
+        
+            Window3 TipWindow = new Window3();
+            TipWindow.Show();
+            Close();
+        }
     }
 
     public static class Adat
