@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Ukl1LmcxY78KUwJLknyASezfJlz2rScr4YnpmBbEFQn+ORkspHapGnhLeqUPeNwviUS2ujgunx4+i6Sxok5gIw==",
+  "dgSpecHash": "IYU2JUK3J8cf2KmGYMxDb5o+XE/h0vZ2+jVWS3BBowbH5nhLh6/M1QNCP+i3BO2/GCLi7zRAnBQ9L3rC5GYuDg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Becy\\source\\repos\\FlashApp\\FlashApp\\FlashApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Becy\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

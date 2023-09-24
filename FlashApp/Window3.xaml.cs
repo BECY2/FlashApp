@@ -140,12 +140,12 @@ namespace FlashApp
 
         }
 
-        //void Enteren(object sender, KeyEventArgs e)
-        //{
-        //    if (e.Key == Key.Return)
-        //    {
-        //        Changes();
-        //    }
-        //}
+        void Enteren(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Return)
+            {
+                Checks();
+            }
+        }
     }
 }

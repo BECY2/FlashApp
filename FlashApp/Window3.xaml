@@ -31,7 +31,7 @@
             </RadioButton.RenderTransform>
 
         </RadioButton>
-        <Button Content="Tip" HorizontalAlignment="Center" Margin="0,303,0,0" VerticalAlignment="Top" Height="88" Width="174" Click="Chuck" ClickMode="Press"/>
+        <Button Content="Tip" HorizontalAlignment="Center" Margin="0,303,0,0" VerticalAlignment="Top" Height="88" Width="174" Click="Chuck" ClickMode="Press" KeyDown="Enteren"/>
         <TextBlock x:Name="Vege" HorizontalAlignment="Left" Margin="49,308,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="28" Width="80">
             <TextBlock.RenderTransform>
                 <ScaleTransform ScaleX="3" ScaleY="3" />

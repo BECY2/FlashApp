@@ -24,6 +24,11 @@
         <Button Content="Submit" HorizontalAlignment="Left" Margin="505,0,0,0" VerticalAlignment="Center" Height="108" Width="143" Click="Submit" ClickMode="Press"/>
         <TextBlock x:Name="WarningText" HorizontalAlignment="Left" Margin="211,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
         <Button Content="Back" HorizontalAlignment="Left" Margin="731,390,0,0" VerticalAlignment="Top" Click="Back" ClickMode="Press"/>
+        <ComboBox x:Name="Combo" HorizontalAlignment="Left" Margin="121,94,0,0" VerticalAlignment="Top" Width="120">
+                
+        </ComboBox>
+        <Button Content="+" HorizontalAlignment="Left" Margin="249,96,0,0" VerticalAlignment="Top" Click="Adas" ClickMode="Press"/>
+
 
     </Grid>
 </Window>

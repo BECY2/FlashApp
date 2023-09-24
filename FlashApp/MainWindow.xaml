@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlashApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" >
 
     <Grid>
         <Button Content="Add" HorizontalAlignment="Left" Margin="174,245,0,0" VerticalAlignment="Top" Height="58" Width="96" Click="Plusz" ClickMode="Press"/>
@@ -17,6 +17,9 @@
             Flash Card
         </TextBlock>
         <Button Content="Tip" HorizontalAlignment="Left" Margin="525,307,0,0" VerticalAlignment="Top" Height="58" Width="96" Click="Tip" ClickMode="Press"/>
+        <ComboBox x:Name="Choose" HorizontalAlignment="Left" Margin="513,103,0,0" VerticalAlignment="Top" Width="120">
+        </ComboBox>
+        <TextBlock x:Name="Bena" HorizontalAlignment="Left" Margin="525,380,0,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.198,0.727" Height="44" Width="187"/>
 
 
     </Grid>
