@@ -124,7 +124,9 @@ namespace FlashApp
             }
             else
             {
-
+                egy.IsChecked = false;
+                ket.IsChecked = false;
+                har.IsChecked = false;
                 Vege.Text = "Rossz válasz";
             }
             siet = true;
@@ -137,6 +139,13 @@ namespace FlashApp
         void Chuck(object sender, RoutedEventArgs s) {
 
             Checks();
+
+        }
+        void Back(object sender, RoutedEventArgs s) {
+
+            MainWindow win = new MainWindow();
+            win.Show();
+            Close();
 
         }
 

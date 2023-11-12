@@ -1,34 +1,105 @@
-﻿<Window x:Class="FlashApp.Window1"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FlashApp"
-        mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+﻿<Window
+    x:Class="FlashApp.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:FlashApp"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Window1"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="121,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+        <TextBlock
+            Margin="121,157,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap">
             <TextBlock.RenderTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </TextBlock.RenderTransform>
             Front:
         </TextBlock>
-        <TextBlock HorizontalAlignment="Left" Margin="121,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+        <TextBlock
+            Margin="121,247,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap">
             <TextBlock.RenderTransform>
                 <ScaleTransform ScaleX="1.5" ScaleY="1.5" />
             </TextBlock.RenderTransform>
-        Back:
+            Back:
         </TextBlock>
-        <TextBox x:Name="FrontInput" HorizontalAlignment="Left" Margin="211,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" KeyDown="OnEnter"/>
-        <TextBox x:Name="BackInput" HorizontalAlignment="Left" Margin="211,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189" KeyDown="OnEnter" />
-        <Button Content="Submit" HorizontalAlignment="Left" Margin="505,0,0,0" VerticalAlignment="Center" Height="108" Width="143" Click="Submit" ClickMode="Press"/>
-        <TextBlock x:Name="WarningText" HorizontalAlignment="Left" Margin="211,301,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="731,390,0,0" VerticalAlignment="Top" Click="Back" ClickMode="Press"/>
-        <ComboBox x:Name="Combo" HorizontalAlignment="Left" Margin="121,94,0,0" VerticalAlignment="Top" Width="120">
-                
-        </ComboBox>
-        <Button Content="+" HorizontalAlignment="Left" Margin="249,96,0,0" VerticalAlignment="Top" Click="Adas" ClickMode="Press"/>
 
-
+        <TextBox
+            x:Name="FrontInput"
+            Width="189"
+            Margin="211,163,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            KeyDown="OnEnter"
+            TextWrapping="Wrap" />
+        <TextBox
+            x:Name="BackInput"
+            Width="190"
+            Margin="211,253,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            KeyDown="OnEnter"
+            TextWrapping="Wrap" />
+        <Button
+            Width="144"
+            Height="108"
+            Margin="506,158,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="Submit"
+            ClickMode="Press"
+            Content="Submit" />
+        <TextBlock
+            x:Name="WarningText"
+            Width="115"
+            Margin="211,276,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
+        <Button
+            Margin="731,390,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="Back"
+            ClickMode="Press"
+            Content="Back" />
+        <ComboBox
+            x:Name="Combo"
+            Width="120"
+            Margin="121,94,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+        <Button
+            Height="22"
+            Margin="249,94,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="Adas"
+            ClickMode="Press"
+            Content="+" />
+        <TextBox
+            x:Name="DeckName"
+            Width="125"
+            Height="22"
+            Margin="276,94,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.5,0.559"
+            TextChanged="DeckName_TextChanged"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="Rossz"
+            Width="120"
+            Margin="276,121,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" />
     </Grid>
 </Window>

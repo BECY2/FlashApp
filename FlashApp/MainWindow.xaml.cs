@@ -37,32 +37,29 @@ namespace FlashApp
         {
             string filePath = "Data.json";
             if (File.Exists(filePath))
-            {
-                if (data.ID != 0)
+        {
+                // Read the existing JSON data from the file
+                string json = File.ReadAllText(filePath);
+                List<Adat2> dta = JsonConvert.DeserializeObject<List<Adat2>>(json);
+                bool newe = true;
+                for (int i = 0; i < dta.Count; i++)
                 {
-                    // Read the existing JSON data from the file
-                    string json = File.ReadAllText(filePath);
-                    List<Adat2> dta = JsonConvert.DeserializeObject<List<Adat2>>(json);
-                    bool newe = true;
-                    for (int i = 0; i < dta.Count; i++)
+                    if (dta[i].ID == data.ID)
                     {
-                        if (dta[i].ID == data.ID)
-                        {
 
-                            dta[i].Front.AddRange(data.Front);
-                            dta[i].Back.AddRange(data.Back);
-                            dta[i].Date.AddRange(data.Date);
-                            newe = false;
-                        }
+                        dta[i].Front.AddRange(data.Front);
+                        dta[i].Back.AddRange(data.Back);
+                        dta[i].Date.AddRange(data.Date);
+                        newe = false;
                     }
-                    if (newe)
-                    {
-                        Adat2 newAdat = data;
-                        dta.Add(newAdat);
-                    }
-                    string updatedJson = JsonConvert.SerializeObject(dta, Formatting.Indented);
-                    File.WriteAllText(filePath, updatedJson);
                 }
+                if (newe)
+                {
+                    Adat2 newAdat = data;
+                    dta.Add(newAdat);
+                }
+                string updatedJson = JsonConvert.SerializeObject(dta, Formatting.Indented);
+                File.WriteAllText(filePath, updatedJson);
             }
             else
             {
@@ -81,6 +78,10 @@ namespace FlashApp
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ComboLoad(object sender, RoutedEventArgs e) {
+
             SaveSystem.ReadFromJson();
             for (int i = 0; i < ReaData.reaData.Count; i++)
             {
@@ -102,7 +103,14 @@ namespace FlashApp
             {
 
                 Window2 PracticeWindow = new Window2();
-                Adat.Csere(ReaData.reaData[Convert.ToInt32(Choose.SelectedItem) - 1]);
+                for (int i = 0; i < ReaData.reaData.Count; i++) {
+
+                    if (ReaData.reaData[i].ID == Choose.SelectedItem.ToString()) {
+
+                        Adat.Csere(ReaData.reaData[i]);
+                        break;
+                    }
+                }
                 PracticeWindow.Show();
                 Close();
             }
@@ -113,15 +121,33 @@ namespace FlashApp
 
         }
 
-        void Tip(object sender, RoutedEventArgs s) { 
+        void Tip(object sender, RoutedEventArgs s) {
 
             if (Choose.SelectedItem != null)
             {
+                
+                for (int i = 0; i < ReaData.reaData.Count; i++)
+                {
 
-                Window3 TipWindow = new Window3();
-                Adat.Csere(ReaData.reaData[Convert.ToInt32(Choose.SelectedItem)-1]);
-                TipWindow.Show();
-                Close();
+                    if (ReaData.reaData[i].ID == Choose.SelectedItem.ToString())
+                    {
+
+                        Adat.Csere(ReaData.reaData[i]);
+                        break;
+                    }
+                }
+
+                if (Adat.Front.Count < 3)
+                {
+
+                    Bena.Text = "You have to have at least 3 card in yor deck";
+                }
+                else
+                {
+                    Window3 TipWindow = new Window3();
+                    TipWindow.Show();
+                    Close();
+                }
             }
             else
             {
@@ -144,14 +170,14 @@ namespace FlashApp
 
         public static void FullClear() { 
             
-            ID = 0;
+            ID = "";
             Front.Clear();
             Back.Clear();
             Date.Clear();
         
         }
 
-        public static int ID { get; set; }
+        public static string ID { get; set; }
         //Declare a static List to serve as a global list
         public static List<string> Front { get; set; } = new List<string>();
         public static List<string> Back { get; set; } = new List<string>();
@@ -167,7 +193,7 @@ namespace FlashApp
             Back = Adat.Back;
             Date = Adat.Date;
         }
-        public int ID { get; set; }
+        public string ID { get; set; }
         public List<string> Front = new List<string>();
         public List<string> Back = new List<string>();
         public List<int> Date = new List<int>();

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlashApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" >
+        Title="MainWindow" Height="450" Width="800" Loaded="ComboLoad">
 
     <Grid>
         <Button Content="Add" HorizontalAlignment="Left" Margin="174,245,0,0" VerticalAlignment="Top" Height="58" Width="96" Click="Plusz" ClickMode="Press"/>

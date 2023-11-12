@@ -29,11 +29,30 @@ namespace FlashApp
                 Combo.Items.Add(ReaData.reaData[i].ID);
             }
         }
+        //private void Window_SizeChanged(object sender, SizeChangedEventArgs e)
+        //{
+        //    Canvs.Width = e.NewSize.Width;
+        //    Canvs.Height = e.NewSize.Height;
+        //    // Calculate new positions based on the window size
+        //    double newLeft = e.NewSize.Width; // Example: 20% from the left
+        //    double newTop = e.NewSize.Height; // Example: 10% from the top
+        //    double[] multiLeft = {0.15, 0.15, 0.27, 0.27, 0.57, 0.27, 0.8, 0.15, 0.305, 0.35};
+        //    double[] multiTop = {0.32, 0.53, 0.33, 0.54, 0.34, 0.58, 0.8, 0.19, 0.19, 0.19};
+        //    WarningText.Text = $"{newLeft} {newTop}";
+
+        //    // Update the Button's position within the Canvas
+        //    for (int i = 0; i < 10; i++)
+        //    {
+        //        Canvas.SetLeft(Canvs.Children[i], newLeft * multiLeft[i]);
+        //        Canvas.SetTop(Canvs.Children[i], newTop * multiTop[i]);
+        //    }
+         
+        //}
 
         void OnSubmit()
         {
             void AddInput() {
-                Adat.ID = Convert.ToInt32(Combo.SelectedItem);
+                Adat.ID = Combo.SelectedItem.ToString(); ;
                 Adat.Front.Add(FrontInput.Text);
                 Adat.Back.Add(BackInput.Text);
                 Adat.Date.Add(0);
@@ -45,7 +64,7 @@ namespace FlashApp
 
             if (FrontInput.Text != "" && BackInput.Text != "" && Combo.SelectedItem != null)
             {
-                if (Adat.ID == Convert.ToInt32(Combo.SelectedItem))
+                if (Adat.ID == Combo.SelectedItem.ToString())
                 {
                     AddInput();
                 }
@@ -65,7 +84,7 @@ namespace FlashApp
         void Back(object sender, RoutedEventArgs s) {
             
             MainWindow win = new MainWindow();
-            if (Adat.ID != 0)
+            if (Adat.ID != "")
             {
                 Adat2 dta = new Adat2();
                 dta.Change();
@@ -88,16 +107,42 @@ namespace FlashApp
                 OnSubmit();
             }
         }
-        void Adas(object sender, RoutedEventArgs s) { 
-        
-            int max = 0;
-            for (int i = 0; i < Combo.Items.Count; i++)
+        void Adas(object sender, RoutedEventArgs s) {
+
+            //int max = 0;
+            //for (int i = 0; i < Combo.Items.Count; i++)
+            //{
+            //    max++;
+            //}
+            bool jo = true;
+            foreach (string item in Combo.Items)
             {
-                max++;
+                if (item == DeckName.Text) { 
+                
+                    jo = false;
+                    break;
+                }
             }
-            Combo.Items.Add(max + 1);
+            if (jo && DeckName.Text != "")
+            {
+                Combo.Items.Add(DeckName.Text);
+                Combo.Text = DeckName.Text;
+                DeckName.Text = "";
+                Rossz.Text = "";
+            }
+            else if (!jo)
+            {
+                Rossz.Text = "Deck name is already existing";
+            }
+            else {
+                Rossz.Text = "Choose a name";
+            }
         
         }
 
+        private void DeckName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

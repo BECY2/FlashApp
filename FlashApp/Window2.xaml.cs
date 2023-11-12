@@ -64,6 +64,14 @@ namespace FlashApp
             }
         
         }
+        void Back(object sender, RoutedEventArgs s)
+        {
+
+            MainWindow win = new MainWindow();
+            win.Show();
+            Close();
+
+        }
     }
 
     public static class Randi {
